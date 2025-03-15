@@ -2,9 +2,11 @@
 
 ## Description
 
-This is a Canvas App Component built using PowerFx Code that allows the user to select a letter which will then filter a datasource for items starting with that letter. This component can be used in a responsive app and support horizontal and vertical orientation.
+This Canvas App Component, built using PowerFx code, allows the user to select a letter, which then filters a datasource for items starting with that letter. The component is responsive and supports both horizontal and vertical orientations. 
 
-Original blog post for this solution was written [here](https://www.openai.com)
+Per Micorosoft's best practice, It is recommended that you import this component into a component library as opposed to a local component in an individual app.
+
+Original blog post for this solution was written [here](https://www.openai.com).
 
 ## Component Property Details
 
@@ -23,6 +25,8 @@ Original blog post for this solution was written [here](https://www.openai.com)
 
 ## Installation Instructions
 
-1. First item
-2. Second item
-3. Third item
+1. Be sure the "Export and import components" feature under settings > Retired is enabled
+2. Download the component .msapp file to your local system.
+3. Within your Component Library or Canvas App go to Components > Import Components 
+4. Choose the Upload File option and upload the .msapp file
+5. Enjoy!
