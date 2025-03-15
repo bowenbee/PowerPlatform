@@ -8,7 +8,9 @@ Per Micorosoft's best practice, It is recommended that you import this component
 
 Original blog post for this solution was written [here](https://www.openai.com).
 
-## Component Property Details
+### Component Property Details
+
+The table below explains the various input properties you can customize in the component.
 
 | Property Name               | Type   | Description                                                                 |
 |-----------------------------|--------|-----------------------------------------------------------------------------|
@@ -25,7 +27,7 @@ Original blog post for this solution was written [here](https://www.openai.com).
 
 ## Installation Instructions
 
-1. Be sure the "Export and import components" feature under settings > Retired is enabled
+1. Within the Canvas App Studio, be sure the "Export and import components" feature is enabled under Settings > Updates > Retired
 2. Download the component .msapp file to your local system.
 3. Within your Component Library or Canvas App go to Components > Import Components 
 4. Choose the Upload File option and upload the .msapp file
