@@ -8,6 +8,8 @@ Per Micorosoft's best practice, It is recommended that you import this component
 
 Original blog post for this solution was written [here](https://www.openai.com).
 
+![Component Preview](assets/alphagalpreview.gif)
+
 ### Component Property Details
 
 The table below explains the various input properties you can customize in the component.
