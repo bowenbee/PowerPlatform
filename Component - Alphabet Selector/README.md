@@ -30,7 +30,7 @@ The table below explains the various input properties you can customize in the c
 ## Installation Instructions
 
 1. Within the Canvas App Studio, be sure the "Export and import components" feature is enabled under Settings > Updates > Retired
-2. Download the [component .msapp file](AlphabetSelectorComponent.msapp) to your local system.
+2. Download the [AlphabetSelectorComponent.msapp](AlphabetSelectorComponent.msapp) to your local system.
 3. Within your Component Library or Canvas App go to Components > Import Components 
 4. Choose the Upload File option and upload the .msapp file
 5. Enjoy!
