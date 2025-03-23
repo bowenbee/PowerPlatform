@@ -6,7 +6,7 @@ This Canvas App Component, built using PowerFx code, allows the user to select a
 
 Per Microsoft's best practice, it’s recommended that you import this component into a component library as opposed to a local component in an individual app.
 
-Original blog post for this solution was written [here](https://www.openai.com).
+Original blog post for this solution was written [here](https://powerrightsolutions.com/alphabet-letter-selector-component-powerapps/).
 
 ![Component Preview](assets/alphagalpreview.gif)
 
