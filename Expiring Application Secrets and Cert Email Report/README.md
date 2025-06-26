@@ -1,6 +1,6 @@
 # Entra (Azure) AD – Fetch App Registration Secrets and Certificates That Are Expiring
 
-![Component Preview](assets/alphagalpreview.gif)
+![Component Preview](assets/AppRegistrationReportSample.png)
 
 ## Description
 
