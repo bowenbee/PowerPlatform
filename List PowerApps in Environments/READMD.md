@@ -4,7 +4,7 @@
 
 The purpose of this Power Automate  is to gather both Canvas and Model Driven App information and output to OneNote for documentation purposes. It uses the Dataverse Tables that house Canvas and Model Driven App information, formats the data into HTML and outputs it to an OneNote Page for each environment.
 
-This solution is part my blog post (Fetch a List of PowerApps across Environments)[https://powerrightsolutions.com/fetch-powerapps-across-environments].
+This topic was written about on my blog Power Right Solutions [here](https://powerrightsolutions.com/fetch-powerapps-across-environments).
 
 ![OneNote Output](assets/OneNoteOutput.png)
 
