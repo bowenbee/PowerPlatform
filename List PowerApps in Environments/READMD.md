@@ -6,7 +6,11 @@ The purpose of this Power Automate  is to gather both Canvas and Model Driven Ap
 
 ![OneNote Output](assets/OneNoteOutput.png)
 
-The owner of the Power Automate flow must have the **System Administrator** security role in each target environment to retrieve Power Apps environment information. Given it's admin level permission nature, be cautious about which account you assign this role to.
+## Requirements
+
+1. The owner of the Power Automate flow must have the **System Administrator** security role in each target environment to retrieve Power Apps environment information.
+    -  Given it's admin level permission nature, be cautious about which account you assign this role to.
+2. A PowerApps or Power Automate Premium License
 
 This solution is part my blog post (Fetch a List of PowerApps across Environments)[https://powerrightsolutions.com/fetch-powerapps-across-environments].
 
