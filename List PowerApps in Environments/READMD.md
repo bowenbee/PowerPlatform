@@ -17,7 +17,7 @@ This topic was written about on my blog Power Right Solutions [here](https://pow
 
 ### Installation Instructions
 
-1. Download the [ZIP Package](GetCanvasandModelDrivenAppInfo_20250630225304.zip)
+1. Download the [ZIP Package](GetCanvasandModelDrivenAppInfo_20250704183641.zip).
 2. Edit the Recurrence schedule trigger to the values of your choosing (default is set to once a month).
 3. Open the solution editor for the flow. Edit the following OneNote Actions
 4. Edit the Notebook key and Note section values in the OneNote Action: "Get pages for a specific section"
