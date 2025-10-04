@@ -1,0 +1,276 @@
+- con_Flex_Gal_Main:
+    Control: GroupContainer@1.3.0
+    Variant: AutoLayout
+    Properties:
+      DropShadow: =DropShadow.None
+      Height: =Parent.Height
+      LayoutDirection: =LayoutDirection.Vertical
+      RadiusBottomLeft: =0
+      RadiusBottomRight: =0
+      RadiusTopLeft: =0
+      RadiusTopRight: =0
+      Width: =Parent.Width
+    Children:
+      - con_Flex_Gal_Header:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =App.Theme.Colors.Darker20
+            FillPortions: =0
+            Height: =35
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =5
+            PaddingBottom: =Self.LayoutGap
+            PaddingLeft: =Self.LayoutGap
+            PaddingRight: =Self.LayoutGap
+            PaddingTop: =Self.LayoutGap
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+          Children:
+            - txt_Header_Status:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FillPortions: =1
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  PaddingBottom: =0
+                  PaddingLeft: =5
+                  PaddingRight: =5
+                  PaddingTop: =0
+                  Size: =18
+                  Text: ="Status"
+                  VerticalAlign: =VerticalAlign.Middle
+                  Weight: ='TextCanvas.Weight'.Semibold
+            - txt_Header_Start:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FillPortions: =1
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  PaddingBottom: =0
+                  PaddingLeft: =5
+                  PaddingRight: =5
+                  PaddingTop: =0
+                  Size: =18
+                  Text: ="Start"
+                  VerticalAlign: =VerticalAlign.Middle
+                  Weight: ='TextCanvas.Weight'.Semibold
+            - txt_Header_End:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FillPortions: =1
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  PaddingBottom: =0
+                  PaddingLeft: =5
+                  PaddingRight: =5
+                  PaddingTop: =0
+                  Size: =18
+                  Text: ="End"
+                  VerticalAlign: =VerticalAlign.Middle
+                  Weight: ='TextCanvas.Weight'.Semibold
+            - ico_Expand:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  Color: =Color.White
+                  Height: =Parent.Height
+                  Icon: =Icon.ExpandView
+                  OnSelect: |-
+                    =UpdateContext(
+                        {
+                            ctxExpandGal: !ctxExpandGal,
+                            ctxRowSelect: Blank()
+                        }
+                    )
+                  PaddingBottom: =5
+                  PaddingLeft: =5
+                  PaddingRight: =5
+                  PaddingTop: =5
+                  Width: =Self.Height
+                  X: =730
+                  Y: =40
+      - con_Flex_Gal_Body:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            LayoutDirection: =LayoutDirection.Vertical
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+          Children:
+            - galParent:
+                Control: Gallery@2.15.0
+                Variant: VariableHeight
+                Properties:
+                  BorderColor: =App.Theme.Colors.Primary
+                  Items: |
+                    =[
+                        {Client: "Ava Morrison"},
+                        {Client: "Jackson Reed"},
+                        {Client: "Lena Patel"},
+                        {Client: "Marcus Nguyen"},
+                        {Client: "Sophie Bennett"},
+                        {Client: "Ethan Brooks"}
+                    ]
+                  TemplatePadding: =0
+                  X: =726
+                  Y: =136
+                Children:
+                  - galChild:
+                      Control: Gallery@2.15.0
+                      Variant: VariableHeight
+                      Properties:
+                        BorderColor: =App.Theme.Colors.Primary
+                        Height: =CountRows(Self.AllItems) * Self.TemplateHeight + (Self.TemplatePadding *3)
+                        Items: |-
+                          =With(
+                              {
+                                  DATA: [
+                                      {
+                                          'Client': "Ava Morrison",
+                                          'Status': "Cancelled",
+                                          'StartDate': "8/18/2024",
+                                          'EndDate': "8/25/2024"
+                                      },
+                                      {
+                                          'Client': "Jackson Reed",
+                                          'Status': "Cancelled",
+                                          'StartDate': "8/20/2024",
+                                          'EndDate': "8/21/2024"
+                                      },
+                                      {
+                                          'Client': "Lena Patel",
+                                          'Status': "Booked",
+                                          'StartDate': "11/13/2024",
+                                          'EndDate': "11/13/2024"
+                                      },
+                                      {
+                                          'Client': "Marcus Nguyen",
+                                          'Status': "Booked",
+                                          'StartDate': "8/18/2024",
+                                          'EndDate': "8/18/2024"
+                                      },
+                                      {
+                                          'Client': "Marcus Nguyen",
+                                          'Status': "Booked",
+                                          'StartDate': "11/13/2024",
+                                          'EndDate': "11/13/2024"
+                                      },
+                                      {
+                                          'Client': "Sophie Bennett",
+                                          'Status': "Booked",
+                                          'StartDate': "11/14/2024",
+                                          'EndDate': "11/14/2024"
+                                      }
+                                  ]
+                              },
+                              Filter(
+                                  DATA,
+                                  Client = ThisItem.Client
+                              )
+                          )
+                        TemplateSize: =40
+                        Visible: =ctxRowSelect = ThisItem.Client || ctxExpandGal
+                        Width: =Parent.TemplateWidth
+                        Y: =btn_Parent_Client.Height
+                      Children:
+                        - con_Child_Row:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(250, 250, 250, 1)
+                              Height: =40
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =5
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.TemplateWidth
+                            Children:
+                              - txt_Child_Status:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Center
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =0
+                                    Text: =ThisItem.Status
+                                    VerticalAlign: =VerticalAlign.Middle
+                              - txt_Child_Start:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Center
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =0
+                                    Text: =ThisItem.StartDate
+                                    VerticalAlign: =VerticalAlign.Middle
+                              - txt_Child_End:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Center
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =0
+                                    Text: =ThisItem.StartDate
+                                    VerticalAlign: =VerticalAlign.Middle
+                              - btn_Row_Edit:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                    Height: =Parent.Height
+                                    Icon: ="ChevronRight"
+                                    Layout: ='ButtonCanvas.Layout'.IconOnly
+                                    OnSelect: =Notify($"{ThisItem.Client} record selected",NotificationType.Information,2000)
+                                    Text: ="Edit"
+                                    Width: =Self.Height
+                  - btn_Parent_Client:
+                      Control: Button@0.0.45
+                      Properties:
+                        Align: =Align.Left
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        BorderRadiusBottomLeft: '=0   '
+                        BorderRadiusBottomRight: =0
+                        BorderRadiusTopLeft: =0
+                        BorderRadiusTopRight: =0
+                        Icon: =If(ctxRowSelect = ThisItem.Client,"ChevronDown","ChevronRight")
+                        IconStyle: ='ButtonCanvas.IconStyle'.Outline
+                        Layout: ='ButtonCanvas.Layout'.IconBefore
+                        OnSelect: |-
+                          =
+                          UpdateContext(
+                              {
+                                  ctxRowSelect: If(
+                                      ctxRowSelect = ThisItem.Client,
+                                      Blank(),
+                                      ThisItem.Client
+                                  ),
+                                  ctxExpandGal: false
+                              }
+                          )
+                        Text: |-
+                          =$"Client: {ThisItem.Client} ({CountRows(galChild.AllItems)})"
+                        Width: =Parent.TemplateWidth
