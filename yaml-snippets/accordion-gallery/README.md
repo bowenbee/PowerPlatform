@@ -1,5 +1,7 @@
 # Accordion Gallery YAML
 
+![Preview](assets/accordion_gallery1.png)
+
 ## Description
 
 This YAML configuration defines a **nested parent-child gallery** for displaying related records (for example, a *Project* with multiple *Tasks*).  
