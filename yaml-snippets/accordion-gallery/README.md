@@ -16,7 +16,7 @@ The gallery supports both **expand/collapse all** functionality and **individual
    - Update the table reference inside the `With()` function.  
    - Ensure the parent lookup value exists in the table (e.g., a Client reference).  
    - Modify the `Filter()` function to match the correct relationship property (for example:  
-     `Filter(DATA, Client = Parent.Client)`).
+     `Filter(DATA, Client = ThisItem.Client)`).
 
 3. **Adjust Styling and Formatting**  
    Customize colors, borders, icons, and layout as needed to match your app’s design.
