@@ -5,6 +5,10 @@
       DropShadow: =DropShadow.None
       Height: =Parent.Height
       LayoutDirection: =LayoutDirection.Vertical
+      PaddingBottom: =15
+      PaddingLeft: =15
+      PaddingRight: =15
+      PaddingTop: =15
       RadiusBottomLeft: =0
       RadiusBottomRight: =0
       RadiusTopLeft: =0
@@ -131,6 +135,7 @@
                       Variant: VariableHeight
                       Properties:
                         BorderColor: =App.Theme.Colors.Primary
+                        DelayItemLoading: =false
                         Height: =CountRows(Self.AllItems) * Self.TemplateHeight + (Self.TemplatePadding *3)
                         Items: |-
                           =With(
@@ -179,6 +184,7 @@
                                   Client = ThisItem.Client
                               )
                           )
+                        LoadingSpinner: =LoadingSpinner.None
                         TemplateSize: =40
                         Visible: =ctxRowSelect = ThisItem.Client || ctxExpandGal
                         Width: =Parent.TemplateWidth
@@ -189,7 +195,7 @@
                             Variant: AutoLayout
                             Properties:
                               DropShadow: =DropShadow.None
-                              Fill: =RGBA(250, 250, 250, 1)
+                              Fill: =Color.White
                               Height: =40
                               LayoutAlignItems: =LayoutAlignItems.Center
                               LayoutDirection: =LayoutDirection.Horizontal
@@ -247,30 +253,46 @@
                                     OnSelect: =Notify($"{ThisItem.Client} record selected",NotificationType.Information,2000)
                                     Text: ="Edit"
                                     Width: =Self.Height
-                  - btn_Parent_Client:
-                      Control: Button@0.0.45
+                  - con_Parent_Row:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
                       Properties:
-                        Align: =Align.Left
-                        Appearance: ='ButtonCanvas.Appearance'.Subtle
-                        BorderRadiusBottomLeft: '=0   '
-                        BorderRadiusBottomRight: =0
-                        BorderRadiusTopLeft: =0
-                        BorderRadiusTopRight: =0
-                        Icon: =If(ctxRowSelect = ThisItem.Client,"ChevronDown","ChevronRight")
-                        IconStyle: ='ButtonCanvas.IconStyle'.Outline
-                        Layout: ='ButtonCanvas.Layout'.IconBefore
-                        OnSelect: |-
-                          =
-                          UpdateContext(
-                              {
-                                  ctxRowSelect: If(
-                                      ctxRowSelect = ThisItem.Client,
-                                      Blank(),
-                                      ThisItem.Client
-                                  ),
-                                  ctxExpandGal: false
-                              }
-                          )
-                        Text: |-
-                          =$"Client: {ThisItem.Client} ({CountRows(galChild.AllItems)})"
+                        BorderColor: =RGBA(244,244,244,1)
+                        Fill: =RGBA(244,244,244,1)
+                        Height: =40
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
                         Width: =Parent.TemplateWidth
+                      Children:
+                        - btn_Parent_Client:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Left
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              BorderRadiusBottomLeft: '=0   '
+                              BorderRadiusBottomRight: =0
+                              BorderRadiusTopLeft: =0
+                              BorderRadiusTopRight: =0
+                              FontSize: =15
+                              Height: =Parent.Height
+                              Icon: =If(ctxRowSelect = ThisItem.Client,"ChevronDown","ChevronRight")
+                              IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                              Layout: ='ButtonCanvas.Layout'.IconBefore
+                              OnSelect: |-
+                                =
+                                UpdateContext(
+                                    {
+                                        ctxRowSelect: If(
+                                            ctxRowSelect = ThisItem.Client,
+                                            Blank(),
+                                            ThisItem.Client
+                                        ),
+                                        ctxExpandGal: false
+                                    }
+                                )
+                              Text: |-
+                                =$"Client: {ThisItem.Client} ({CountRows(galChild.AllItems)})"
+                              Width: =Parent.Width

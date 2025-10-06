@@ -1,6 +1,6 @@
 # Nested (Accordion) Gallery
 
-![Preview](assets/accordion_gallerydemo.gif)
+![Preview](assets/accordion_gallerydemo2.gif)
 
 ## Description
 
