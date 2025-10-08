@@ -8,5 +8,5 @@ This YAML configuration produces a gallery of the modern button icons for easier
 
 ### References 
 
-I originally blogged about this topic ![here](https://powerrightsolutions.com/powerapps-modern-buttons-icon-name-cheat-sheet)
+I originally blogged about this topic [here](https://powerrightsolutions.com/powerapps-modern-buttons-icon-name-cheat-sheet).
 
