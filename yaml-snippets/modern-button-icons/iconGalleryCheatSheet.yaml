@@ -1,0 +1,137 @@
+- galIcons:
+    Control: Gallery@2.15.0
+    Variant: Vertical
+    Properties:
+      BorderColor: =RGBA(0, 18, 107, 1)
+      Height: =768
+      Items: |-
+        =Table(
+            [
+                "Add",
+                "Airplane",
+                "AppsListDetail",
+                "AppsList",
+                "ArrowClockwise",
+                "ArrowDownload",
+                "ArrowDown",
+                "ArrowExit",
+                "ArrowLeft",
+                "ArrowReset",
+                "ArrowRight",
+                "ArrowSort",
+                "ArrowSync",
+                "ArrowUndo",
+                "ArrowUp",
+                "Attach",
+                "CalendarAdd",
+                "Calendar",
+                "Camera",
+                "Cart",
+                "Chat",
+                "CheckmarkCircle",
+                "Checkmark",
+                "ChevronDown",
+                "ChevronLeft",
+                "ChevronRight",
+                "ChevronUp",
+                "Circle",
+                "ClockAlarm",
+                "Clock",
+                "Copy",
+                "Database",
+                "Delete",
+                "DismissCircle",
+                "Dismiss",
+                "DocumentAdd",
+                "DocumentBulletList",
+                "DocumentPdf",
+                "Document",
+                "Edit",
+                "EmojiSmileSlight",
+                "Eraser",
+                "ErrorCircle",
+                "Eye",
+                "Filter",
+                "GlobeArrowUp",
+                "GlobeError",
+                "GlobeProhibited",
+                "Globe",
+                "GlobeSync",
+                "GlobeWarning",
+                "GridDots",
+                "History",
+                "Home",
+                "Info",
+                "Link",
+                "Mail",
+                "Money",
+                "MoreHorizontal",
+                "Open",
+                "PeopleAdd",
+                "People",
+                "Person",
+                "Print",
+                "Question",
+                "SaveCopy",
+                "Save",
+                "Search",
+                "Send",
+                "ServiceBell",
+                "Settings",
+                "TextCaseTitle",
+                "Warning"
+            ]
+        )
+      TemplateSize: =60
+      Width: =862
+    Children:
+      - con_Icon_Row:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Height: =Parent.TemplateHeight
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Width: =Parent.TemplateWidth
+          Children:
+            - txt_Icon_Text:
+                Control: Text@0.0.51
+                Properties:
+                  FillPortions: =1
+                  Height: =40
+                  PaddingLeft: =12
+                  Text: =ThisItem.Value
+                  VerticalAlign: =VerticalAlign.Middle
+                  X: =40
+                  Y: =28
+            - btn_Icon_Primary:
+                Control: Button@0.0.45
+                Properties:
+                  Height: =40
+                  Icon: =ThisItem.Value
+                  Text: =ThisItem.Value
+                  Width: =160
+            - btn_Icon_Secondary:
+                Control: Button@0.0.45
+                Properties:
+                  Appearance: ='ButtonCanvas.Appearance'.Secondary
+                  Height: =40
+                  Icon: =ThisItem.Value
+                  Text: =ThisItem.Value
+                  Width: =160
+            - btn_IconOnly:
+                Control: Button@0.0.45
+                Properties:
+                  Height: =40
+                  Icon: =ThisItem.Value
+                  Layout: ='ButtonCanvas.Layout'.IconOnly
+                  Text: =ThisItem.Value
+                  Width: =40
+                  X: =448
+                  Y: =14
