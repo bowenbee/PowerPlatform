@@ -8,9 +8,10 @@ The navigation is broken down by Buttons, Dividers, Dropdowns (for child items u
 1. Copy/Paste the yaml code into your PowerApp
 2. Change the galNavigation items to a table structure using the explantion below
 
+![Preview](Assets/Fluent2LeftNav.png)
 
 Example Menu Schema:
-
+```json
 Button:
 {
     ItemKey: "Text",
@@ -47,8 +48,7 @@ Dropdown:
     ItemParentKey: Blank(), //Should always be blank for dropdowns.
     ItemVisible: true //Can be set to true or false using formulas to hide buttons dynamically  
 }
-
-Example Table:
+```
 
 ClearCollect(
     colNav,
