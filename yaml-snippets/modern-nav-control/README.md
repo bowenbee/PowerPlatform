@@ -49,7 +49,7 @@ Dropdown:
     ItemVisible: true //Can be set to true or false using formulas to hide buttons dynamically  
 }
 ```
-
+```json
 ClearCollect(
     colNav,
     {
@@ -151,7 +151,7 @@ ClearCollect(
         ItemVisible: true
     }
 );
-
+```
 
 ### References 
 
