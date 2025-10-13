@@ -1,0 +1,309 @@
+- containerComponent_1:
+    Control: GroupContainer@1.3.0
+    Variant: AutoLayout
+    Properties:
+      DropShadow: =DropShadow.None
+      Fill: =RGBA(240, 240, 240, 1)
+      Height: =Parent.Height
+      LayoutDirection: =LayoutDirection.Vertical
+      RadiusBottomLeft: =0
+      RadiusBottomRight: =0
+      RadiusTopLeft: =0
+      RadiusTopRight: =0
+      Width: =Min( Parent.Width,260)
+    Children:
+      - galNavigation_1:
+          Control: Gallery@2.15.0
+          Variant: VariableHeight
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Items: |-
+              =/*
+              Fluent 2 Nav Control Item Schemas
+
+              Button:
+              {
+                  ItemKey: "Text",
+                  ItemDisplayName: "Text",
+                  ItemIconName: "Text", //See the Button control's icon property for a full list of Fluent 2 Icons
+                  ItemScreen: Screen,
+                  ItemType: "Button",
+                  ItemOpen: false, //Can be set to true to have an item opened by default upon loading the app
+                  ItemParentKey: "Text", //ItemKey of a parent item if this button should appear under a dropdown
+                  ItemVisible: true //Can be set to true or false using formulas to hide buttons dynamically
+              }
+
+              Divider:
+              {
+                  ItemKey: "Text",
+                  ItemType: "Divider"
+              }
+
+              Category:
+              {
+                  ItemKey: "Text",
+                  ItemDisplayName: "Text",
+                  ItemType: "Category"
+              }
+
+              Dropdown:
+              {
+                  ItemKey: "Text",
+                  ItemDisplayName: "Text",
+                  ItemIconName: "Text", //See the Button control's icon property for a full list of Fluent 2 Icons
+                  ItemScreen: Blank(), //Should always be blank for dropdowns. No navigation occurs when clicking dropdown
+                  ItemType: "Dropdown",
+                  ItemOpen: false, //Set this to true if dropdown should be open by default
+                  ItemParentKey: Blank(), //Should always be blank for dropdowns.
+                  ItemVisible: true //Can be set to true or false using formulas to hide buttons dynamically  
+              }
+
+              */
+              Filter(
+                  colNav,
+                  IsBlank(ItemParentKey)
+              )
+            LayoutMinHeight: =0
+            LayoutMinWidth: =0
+            LoadingSpinner: =LoadingSpinner.None
+          Children:
+            - containerMain_1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =containerHeight_1.Y
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.TemplateWidth
+                Children:
+                  - containerButton_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =40
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinWidth: =0
+                        Visible: =ThisItem.ItemType =  "Button"
+                      Children:
+                        - containerSelected_2:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              DropShadow: =DropShadow.None
+                              Fill: =If(ThisItem.ItemKey    =varSelectedButton, App.Theme.Colors.Primary, RGBA(0, 0, 0, 0))
+                              FillPortions: =0
+                              Height: =24
+                              LayoutMinHeight: =24
+                              Width: =4
+                        - btnNavigation_2:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Left
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              FillPortions: =1
+                              FontWeight: =If(ThisItem.ItemKey, varSelectedButton ,FontWeight.Semibold,FontWeight.Normal)
+                              Icon: =ThisItem.ItemIconName
+                              IconStyle: =If(ThisItem.ItemKey = varSelectedButton, "Filled","Outline")
+                              LayoutMinWidth: =0
+                              OnSelect: =Set(varSelectedButton, ThisItem.ItemKey);Navigate(ThisItem.ItemScreen);
+                              PaddingLeft: '=6   '
+                              Text: =ThisItem.ItemDisplayName
+                  - containerCategory_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =32
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinWidth: =0
+                        PaddingLeft: =14
+                        Visible: =ThisItem.ItemType =  "Category"
+                      Children:
+                        - lblCategory_1:
+                            Control: Text@0.0.51
+                            Properties:
+                              FillPortions: =1
+                              LayoutMinWidth: =0
+                              Text: =ThisItem.ItemDisplayName
+                              VerticalAlign: =VerticalAlign.Middle
+                              Weight: ='TextCanvas.Weight'.Semibold
+                              Wrap: =false
+                  - containerDivider_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =8
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinWidth: =0
+                        PaddingBottom: =4
+                        PaddingLeft: =4
+                        PaddingRight: =4
+                        PaddingTop: =4
+                        Visible: =ThisItem.ItemType =  "Divider"
+                      Children:
+                        - containerDividerLine_1:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(214, 221, 224, 1)
+                              Height: =1
+                              LayoutMinWidth: =0
+                              Width: =1
+                  - containerDropdown_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =40
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinWidth: =0
+                        Visible: =ThisItem.ItemType =  "Dropdown"
+                      Children:
+                        - containerSelected_3:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              DropShadow: =DropShadow.None
+                              Fill: |-
+                                =If(
+                                    CountRows(
+                                        Filter(
+                                            colNav,
+                                            ItemParentKey = ThisItem.ItemKey,
+                                            ItemKey = varSelectedButton,
+                                            ThisItem.ItemOpen = false
+                                        )
+                                    ) > 0,
+                                    App.Theme.Colors.Primary,
+                                    RGBA(
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    )
+                                )
+                              FillPortions: =0
+                              Height: =24
+                              LayoutMinHeight: =24
+                              Width: =4
+                        - btnDropDown_1:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Left
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              FillPortions: =1
+                              FontWeight: |-
+                                =If(
+                                    CountRows(
+                                        Filter(
+                                            colNav,
+                                            ItemParentKey = ThisItem.ItemKey,
+                                            ItemKey = varSelectedButton,
+                                            ThisItem.ItemOpen = false
+                                        )
+                                    ) > 0,
+                                    FontWeight.Semibold,
+                                    FontWeight.Normal
+                                )
+                              Icon: =ThisItem.ItemIconName
+                              IconStyle: |-
+                                =If(
+                                    CountRows(
+                                        Filter(
+                                            colNav,
+                                            ItemParentKey = ThisItem.ItemKey,
+                                            ItemKey = varSelectedButton,
+                                            ThisItem.ItemOpen = false
+                                        )
+                                    ) > 0,
+                                    "Filled",
+                                    "Outline"
+                                )
+                              LayoutMinWidth: =0
+                              OnSelect: =Patch(colNav, ThisItem, {ItemOpen:!ThisItem.ItemOpen})
+                              PaddingLeft: '=6   '
+                              Text: =ThisItem.ItemDisplayName
+                        - btnDropDownArrpw_1:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              FontWeight: =If(ThisItem.ItemKey, varSelectedButton ,FontWeight.Semibold,FontWeight.Normal)
+                              Icon: =If(ThisItem.ItemOpen,"ChevronDown","ChevronRight")
+                              IconStyle: =If(ThisItem.ItemKey = varSelectedButton, "Filled","Outline")
+                              Layout: ='ButtonCanvas.Layout'.IconOnly
+                              LayoutMinWidth: =0
+                              OnSelect: =Patch(colNav, ThisItem, {ItemOpen:!ThisItem.ItemOpen})
+                              PaddingLeft: =0
+                              Text: =ThisItem.ItemDisplayName
+                              Width: =32
+                  - containerSubButtons_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =galSubButtons_1.AllItemsCount * galSubButtons_1.TemplateHeight
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =ThisItem.ItemOpen
+                      Children:
+                        - galSubButtons_1:
+                            Control: Gallery@2.15.0
+                            Variant: Vertical
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Items: =Filter(colNav,ItemParentKey = ThisItem.ItemKey)
+                              LayoutMinHeight: =0
+                              LayoutMinWidth: =0
+                              LoadingSpinner: =LoadingSpinner.None
+                              ShowScrollbar: =false
+                              TemplatePadding: =0
+                              TemplateSize: =40
+                            Children:
+                              - btnNavigation_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Align: =Align.Left
+                                    Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                    FontWeight: =If(ThisItem.ItemKey, varSelectedButton ,FontWeight.Semibold,FontWeight.Normal)
+                                    Height: =Parent.TemplateHeight
+                                    Icon: =ThisItem.ItemIconName
+                                    IconStyle: =If(ThisItem.ItemKey = varSelectedButton, "Filled","Outline")
+                                    Layout: ='ButtonCanvas.Layout'.TextOnly
+                                    OnSelect: =Set(varSelectedButton, ThisItem.ItemKey);Navigate(ThisItem.ItemScreen);
+                                    PaddingLeft: =32
+                                    Text: =ThisItem.ItemDisplayName
+                                    Width: =Parent.TemplateWidth
+                  - containerHeight_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =1
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinWidth: =0
