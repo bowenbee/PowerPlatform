@@ -2,7 +2,7 @@
 
 ## Description
 
-This Canvas App Component, built using Power Fx code, uses a compact left navigation menu based on the modern toolip control.
+This Canvas App Component is built using Power Fx code, uses a compact left navigation menu based on the modern toolip control.
 
 ## Reference
 
