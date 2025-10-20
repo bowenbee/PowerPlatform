@@ -278,7 +278,7 @@
                               BorderRadiusTopRight: =0
                               FontSize: =15
                               Height: =Parent.Height
-                              Icon: =If(ctxRowSelect = ThisItem.Client,"ChevronDown","ChevronRight")
+                              Icon: =If(ctxRowSelect = ThisItem.Client || ctxExpandGal,"ChevronDown","ChevronRight")
                               IconStyle: ='ButtonCanvas.IconStyle'.Filled
                               Layout: ='ButtonCanvas.Layout'.IconBefore
                               OnSelect: |-
