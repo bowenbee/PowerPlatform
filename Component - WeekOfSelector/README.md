@@ -75,6 +75,7 @@ ClearCollect(
         }
     )
 );
+```
 
 Create a gallery bound to colTasks, then filter it using the component's date outputs:
 
@@ -84,6 +85,7 @@ Filter(
     DueDate >= cmp_Date_WeekOf_Modern_1.DateOutputs.WeekStart &&
     DueDate <= cmp_Date_WeekOf_Modern_1.DateOutputs.WeekEnd
 )
+```
 
 Result: Only tasks whose due dates fall within the currently selected week will be displayed.
 
