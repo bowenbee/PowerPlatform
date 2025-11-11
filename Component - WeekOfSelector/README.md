@@ -2,7 +2,9 @@
 
 ## Description
 
-This Canvas App Component, built using Power Fx code, gets the current week of and allows selection to move forwards or backwards to the previous week.
+This Canvas App Component, built using Power Fx code, gets the current week of and allows selection to move forwards or backwards to the previous week. There are two versions of this component for download: one that uses PowerApps classic controls and one with modern controls for better theme integration with your app. Aside from styling, they function the same.
+
+![Preview](assets/weekselector_preview.png)
 
 ## Tips
 
