@@ -14,7 +14,7 @@ Both versions have the same functionality—the difference is purely visual.
 
 ---
 
-## Tips
+## Component Custom Property Details
 
 1. **Date Format**  
    Customize the date output using the **Date Format Text** parameter.  
@@ -28,8 +28,8 @@ Both versions have the same functionality—the difference is purely visual.
    The **Next Week** and **Prior Week** actions expose *OnSelect* events you can use to trigger additional logic when the user navigates weeks.
 
 4. **Component Outputs**  
-   The component exposes useful date values through the `.DateOutputs` record, including:  
-   - `WeekOf`  
+   The component provides values through the `.DateOutputs` record, including:  
+   - `Title`  
    - `ISOWeekNumber`  
    - `WeekStart`  
    - `WeekEnd`  
@@ -80,10 +80,12 @@ ClearCollect(
 Create a gallery bound to colTasks, then filter it using the component's date outputs:
 
 ```powerfx
-Filter(
-    colTasks,
-    DueDate >= cmp_Date_WeekOf_Modern_1.DateOutputs.WeekStart &&
-    DueDate <= cmp_Date_WeekOf_Modern_1.DateOutputs.WeekEnd
+Sort(
+    Filter(
+        colTasks,
+        DueDate >= cmp_Date_WeekOf_Modern_1.DateOutputs.WeekStart && DueDate <= cmp_Date_WeekOf_Modern_1.DateOutputs.WeekEnd
+    ),
+    DueDate
 )
 ```
 
