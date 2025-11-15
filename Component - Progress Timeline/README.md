@@ -1,8 +1,8 @@
 # Purpose
 
 This component, created using **Power Fx**, was inspired by the **Business Process Flow Timeline step control** found in model driven apps.  
-This canvas app component allows users to step through various stages, moving the flow bar forward or backward.  
-The component uses SVGs to indicate when a step is **Not Started**, **Active**, or **Completed**.
+This canvas app component allows users to step through various stages, moving the timeline forward or backward.  
+The component uses SVGs to indicate when a step is **Not Started**, **Active**, or **Completed**. Practical use-cases can be for multi step forms and more complex data entry processes where items may sit at a certain stage for a period of time.
 
 ![Image1](assets/HorizonaProgressBar1.png)
 
