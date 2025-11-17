@@ -1,0 +1,76 @@
+- galStatusIcons:
+    Control: Gallery@2.15.0
+    Variant: BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0
+    Properties:
+      BorderColor: =RGBA(245, 245, 245, 1)
+      Height: =CountRows(Self.AllItems) * Self.TemplateHeight
+      Items: |-
+        =Table(
+            {
+                ID: 1,
+                Status: "Pending",
+                Image: "data:image/svg+xml;utf8, " & EncodeUrl("<svg fill='#004AAD' aria-hidden='true' width='40px' height='40px' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M5 6a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm4-3a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM2 13a2 2 0 0 1 2-2h6.26c-.26.3-.48.64-.66 1H4a1 1 0 0 0-1 1c0 1.3.62 2.28 1.67 2.95A8.16 8.16 0 0 0 9 17l.6-.01c.17.34.37.66.61.95-.4.04-.8.06-1.21.06a9.14 9.14 0 0 1-4.87-1.2A4.35 4.35 0 0 1 2 13Zm17 1.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM14.5 12a.5.5 0 0 0-.5.5v2c0 .28.22.5.5.5H16a.5.5 0 0 0 0-1h-1v-1.5a.5.5 0 0 0-.5-.5Z' fill='#004AAD'/></svg>")
+            },
+            {
+                ID: 2,
+                Status: "Approved",
+                Image: "data:image/svg+xml;utf8, " & EncodeUrl("<svg fill='#22c55e' aria-hidden='true' width='40px' height='40px' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M5 6a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm4-3a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM2 13a2 2 0 0 1 2-2h6.26c-.26.3-.48.64-.66 1H4a1 1 0 0 0-1 1c0 1.3.62 2.28 1.67 2.95A8.16 8.16 0 0 0 9 17l.6-.01c.17.34.37.66.61.95-.4.04-.8.06-1.21.06a9.14 9.14 0 0 1-4.87-1.2A4.35 4.35 0 0 1 2 13Zm17 1.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm-2.15-1.85a.5.5 0 0 0-.7 0l-2.65 2.64-.65-.64a.5.5 0 0 0-.7.7l1 1c.2.2.5.2.7 0l3-3a.5.5 0 0 0 0-.7Z' fill='#22c55e'/></svg>")
+            },
+            {
+                ID: 3,
+                Status: "Rejected",
+                Image: "data:image/svg+xml;utf8, " & EncodeUrl("<svg fill='#B00020' aria-hidden='true' width='40px' height='40px' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M5 6a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm4-3a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM2 13a2 2 0 0 1 2-2h6.26c-.26.3-.48.64-.66 1H4a1 1 0 0 0-1 1c0 1.3.62 2.28 1.67 2.95A8.16 8.16 0 0 0 9 17l.6-.01c.17.34.37.66.61.95-.4.04-.8.06-1.21.06a9.14 9.14 0 0 1-4.87-1.2A4.35 4.35 0 0 1 2 13Zm17 1.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm-2.65-1.15a.5.5 0 0 0-.7-.7l-1.15 1.14-1.15-1.14a.5.5 0 0 0-.7.7l1.14 1.15-1.14 1.15a.5.5 0 0 0 .7.7l1.15-1.14 1.15 1.14a.5.5 0 0 0 .7-.7l-1.14-1.15 1.14-1.15Z' fill='#B00020'/></svg>")
+            },
+            {
+                ID: 4,
+                Status: "Needs Revision",
+                Image: "data:image/svg+xml;utf8, "&EncodeUrl("<svg fill='#C25C00' aria-hidden='true' width='40px' height='40px' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M14.5 10a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm-4.24 1c-.26.3-.48.64-.66 1H4a1 1 0 0 0-1 1c0 1.3.62 2.28 1.67 2.95A8.16 8.16 0 0 0 9 17l.6-.01c.17.34.37.66.61.95-.4.04-.8.06-1.21.06a9.14 9.14 0 0 1-4.87-1.2A4.35 4.35 0 0 1 2 13a2 2 0 0 1 2-2h6.26Zm4.24 4.88a.62.62 0 1 0 0 1.24.62.62 0 0 0 0-1.25Zm0-3.88a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2a.5.5 0 0 0-.5-.5ZM9 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z' fill='#C25C00'/></svg>")
+            }
+        )
+      TemplateSize: =50
+      Width: =200
+      X: =1166
+      Y: =54
+    Children:
+      - Image7:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =Self.Width
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =ThisItem.Image
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =Parent.TemplateHeight * .80
+            X: =5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+      - Title12:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.Status
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image7.Width-20
+            X: =Image7.X+ Image7.Width +10
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
