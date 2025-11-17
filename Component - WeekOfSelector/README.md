@@ -45,7 +45,7 @@ Both versions have the same functionality—the difference is purely visual.
 
 ## Example Use Case
 
-Suppose you have a randomly generated collection of tasks with due dates within the current month:
+Suppose you have a randomly generated collection of tasks with due dates for the current month:
 
 ```powerfx
 ClearCollect(
