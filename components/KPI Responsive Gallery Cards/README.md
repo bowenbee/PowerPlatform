@@ -2,8 +2,6 @@
 
 ![Image1](assets/kpicards_tablet.png)
 
-![Image1](assets/kpicards_mobile.png)
-
 ## Description
 
 This component features KPI datacards within a gallery that adapts to a responsive design. It features use of subtle svg gradient images for both the background as well as the icon. In additional, an html control is used for the value to also reflect the subtle gradient design.
@@ -28,3 +26,4 @@ The table below explains the various input properties you can customize in the c
 2. When adding into an app, change the Width property to Parent.Width and Height to Parent.Height
 3. Update the KPI Items property with data that matches the default schema  
 
+![Image1](assets/kpicards_mobile.png)
