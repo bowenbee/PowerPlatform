@@ -4,11 +4,11 @@
 
 ## Description
 
-This component features KPI datacards within a gallery that adapts to a responsive design. It features use of subtle svg gradient images for both the background as well as the icon. In additional, an html control is used for the value to also reflect the subtle gradient design.
+This component features KPI data cards displayed in a responsive gallery layout. It includes subtle SVG gradient images for both the background and the icons. In addition, an HTML control is used to render the KPI value with a matching gradient text effect.
 
 ### Component Property Details
 
-The table below explains the various input properties you can customize in the component.
+The table below explains the customizable input properties available in the component.
 
 | Property              | Type    | Description                                              |
 |-----------------------|---------|----------------------------------------------------------|
