@@ -23,7 +23,7 @@ The table below explains the customizable input properties available in the comp
 ### Intallation Details
 
 1. Download the msapp file and import the component file into your Canvas App or Global Component Library
-2. When adding into an app, change the Width property to Parent.Width and Height to Parent.Height
+2. If needed, change the Width property to Parent.Width and Height to Parent.Height
 3. Update the KPI Items property with data that matches the default schema  
 
 ![Image1](assets/kpicards_mobile.png)
