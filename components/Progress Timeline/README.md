@@ -1,10 +1,15 @@
 # Purpose
 
-This component, created using **Power Fx**, was inspired by the **Business Process Flow Timeline step control** found in model driven apps.  
+This component, created using **Power Fx**, was inspired by the **Business Process Flow Progress Stage Control** found in model driven apps.  
 This canvas app component allows users to step through various stages, moving the timeline forward or backward.  
 The component uses SVGs to indicate when a step is **Not Started**, **Active**, or **Completed**. Practical use-cases can be for multi step forms and more complex data entry processes where items may sit at a certain stage for a period of time.
 
-![Image1](assets/HorizontalProgressBar2.gif)
+![Image1](assets/ProgressBarEx1.png)
+
+An example with an ordering process timeline
+
+![Image1](assets/ProgressBarEx2.gif)
+
 
 ---
 
@@ -27,6 +32,9 @@ The component uses SVGs to indicate when a step is **Not Started**, **Active**, 
 - **Active Step**  
   The current active step.
 
+  - **Complete Image**  
+  SVG image used for a *finished* step.
+
 - **ColorTheme**  
   A record containing hex colors for the primary color and gray.
 
@@ -35,11 +43,17 @@ The component uses SVGs to indicate when a step is **Not Started**, **Active**, 
 
 - **Active Stage Number**  
   The Number of the Active Stage
+
+- **Output Stage**  
+  The record of the current selected stage
+
 ---
 
 # How to Use
 
 ## 1. Create the Table Data Collection and Active Stage Variable on your OnStart app code
+
+Provided below is a sample collection to use.
 
 ```powerfx
 ClearCollect(
@@ -68,7 +82,7 @@ ClearCollect(
     )
 );
 Set(
-    varStage,
+    varCurrentStage,
     1
 )
 ```
@@ -79,26 +93,36 @@ Set(
 
 Under Tree view, Go to Components > Import Components, and the upload the msapp file
 
-## 3. Bind Properties to the component
+## 3. Set the Following Custom Properties
 
 - **Table Data** → `colNav`  
-- **Active Stage Number** → `varStage`
+- **Active Stage Number** → `varCurrentStage`
 
 ---
 
-## 4. Add Navigation Buttons
+## 4. Set the OnNextStage and OnPriorStage Events Properties
 
-Add two buttons for next and previous in your app. I use the modern buttons here. 
-Their **OnSelect** actions will move the progress bar forward or backward.
+Locate the "OnNextStage" Property and set to the following:
 
-| Button | Property / Action | Code |
-|--------|-------------------|------|
-| Next Button | OnSelect | `Set(varStage, varStage + 1)` |
-| Previous Button | OnSelect | `Set(varStage, varStage - 1)` |
-| Previous Button | DisplayMode | `If(varStage = Min(cmp_HorizontalTimeline.TableData, Stage), DisplayMode.Disabled, DisplayMode.Edit)` |
-| Previous Button | Text | `"Previous"` |
-| Previous Button | Icon | `"ArrowLeft"` |
-| Next Button | DisplayMode | `If(varStage = Max(cmp_HorizontalTimeline.TableData, Stage) + 1, DisplayMode.Disabled, DisplayMode.Edit)` |
-| Next Button | Text | `If(varStage = Last(colStages).Stage \|\| varStage = Last(colStages).Stage + 1, "Finish", "Next")` |
-| Next Button | Icon | `If(varStage = Last(colStages).Stage \|\| varStage = Last(colStages).Stage + 1, "Checkmark", "ArrowRight")` |
-| Next Button | Color Palette | `If(varStage = Last(colStages).Stage \|\| varStage = Last(colStages).Stage + 1, RGBA(8,222,8,1), App.Theme.Colors.Primary)` |
+```powerfx
+
+Set(
+    varCurrentStage,
+    Min(
+        varCurrentStage + 1,
+        CountRows(Self.TableData)
+    )
+)
+```
+
+Do the same with the "OnPriorStage"
+
+```powerfx
+Set(
+    varCurrentStage,
+    Max(
+        varCurrentStage - 1,
+        1
+    )
+)
+```
