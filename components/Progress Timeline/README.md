@@ -10,44 +10,20 @@ An example with an ordering process timeline
 
 ![Image1](assets/ProgressBarEx2.gif)
 
-
----
-
-# How to Use
-
 ## Custom Input Properties
 
-- **Table Data**  
-  A table/collection representing the flow bar step navigation items. Refer to the schema example below.
-
-- **Active Step Image**  
-  SVG image used for the *active* step.
-
-- **In Progress Image**  
-  SVG image used for a step that is *in progress*.
-
-- **Complete Image**  
-  SVG image used for a *completed* step.
-
-- **Active Step**  
-  The current active step.
-
-- **Finished Image**  
-SVG image used for a *finished* step.
-
-- **ColorTheme**  
-  A record containing hex colors for the primary color and gray.
-
-- **Font Size**  
-  Font size used for the step labels.
-
-- **Active Stage Number**  
-  The Number of the Active Stage
-
-- **Output Stage**  
-  The record of the current selected stage
-
----
+| Property             | Type    | Description                                              |
+|----------------------|---------|----------------------------------------------------------|
+| Table Data           | Table   | A table/collection representing the flow bar step navigation items. |
+| Active Step Image    | Image   | SVG image used for the *active* step.                   |
+| In Progress Image    | Image   | SVG image used for a step that is *in progress*.       |
+| Complete Image       | Image   | SVG image used for a *completed* step.                 |
+| Active Step          | Number  | The current active step.                                |
+| Finished Image       | Image   | SVG image used for a *finished* step.                  |
+| ColorTheme           | Record  | Contains hex colors for the primary color and gray.     |
+| Font Size            | Number  | Font size used for the step labels.                     |
+| Active Stage Number  | Number  | The number of the active stage.                         |
+| Output Stage         | Record  | The record of the currently selected stage.            |
 
 # How to Use
 
