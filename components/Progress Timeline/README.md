@@ -4,6 +4,8 @@ This component, created using **Power Fx**, was inspired by the **Business Proce
 This canvas app component allows users to step through various stages, moving the timeline forward or backward.  
 The component uses SVGs to indicate when a step is **Not Started**, **Active**, or **Completed** or **Finished** in the case of the last stage. Practical use-cases can be for multi step forms and more complex data entry processes where items may sit at a certain stage for a period of time.
 
+I originally blogged about this component [here](https://powerrightsolutions.com/creating-a-process-bar-component-in-canvas-apps).
+
 ![Image1](assets/ProgressBarEx1.png)
 
 An example with an ordering process timeline
@@ -71,7 +73,7 @@ Under Tree view, Go to Components > Import Components, and the upload the msapp 
 
 ## 3. Set the Following Custom Properties
 
-- **Table Data** → `colNav`  
+- **Table Data** → `colStages`  
 - **Active Stage Number** → `varCurrentStage`
 
 ---
