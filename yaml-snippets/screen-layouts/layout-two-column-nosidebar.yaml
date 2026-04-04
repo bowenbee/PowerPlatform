@@ -1,0 +1,227 @@
+- con_Screen_4:
+    Control: GroupContainer@1.5.0
+    Variant: AutoLayout
+    Properties:
+      DropShadow: =DropShadow.None
+      Fill: =RGBA(245, 245, 245, 1)
+      Height: =Parent.Height
+      LayoutDirection: =LayoutDirection.Vertical
+      LayoutGap: =2
+      RadiusBottomLeft: =0
+      RadiusBottomRight: =0
+      RadiusTopLeft: =0
+      RadiusTopRight: =0
+      Width: =Parent.Width
+    Children:
+      - con_Header_4:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =App.Theme.Colors.Primary
+            FillPortions: =0
+            Height: =48
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            PaddingLeft: =5
+            PaddingRight: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+          Children:
+            - Header5_1:
+                Control: Header@0.0.44
+                Properties:
+                  AlignInContainer: =AlignInContainer.Stretch
+                  FillPortions: =1
+                  IsLogoVisible: =false
+                  IsProfilePictureVisible: =false
+                  LayoutMinHeight: =16
+                  LayoutMinWidth: =16
+      - con_ParentMain_4:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =Parent.Fill
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =0
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+          Children:
+            - con_Main_4:
+                Control: GroupContainer@1.5.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =Parent.Fill
+                  FillPortions: =4
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  LayoutMaxHeight: =
+                  LayoutMaxWidth: =
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - con_SubMain_4:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =16
+                        LayoutMaxHeight: =1000
+                        LayoutMaxWidth: =Max(Parent.Width,con_SubMainAutoHeight_5.Y)
+                        LayoutMinHeight: =Max(Parent.Height,con_SubMainAutoHeight_5.Y)
+                        LayoutMinWidth: =0
+                        PaddingBottom: =Self.LayoutGap
+                        PaddingLeft: =Self.LayoutGap
+                        PaddingRight: =Self.LayoutGap
+                        PaddingTop: =Self.LayoutGap
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - con_SubMain2_1:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =16
+                              LayoutMaxHeight: =1400
+                              LayoutMaxWidth: =Parent.Width - (Self.LayoutGap *2)
+                              LayoutMinHeight: =0
+                              LayoutMinWidth: =0
+                              PaddingBottom: =Self.LayoutGap
+                              PaddingLeft: =Self.LayoutGap
+                              PaddingRight: =Self.LayoutGap
+                              PaddingTop: =Self.LayoutGap
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - txt_SubHeader_1:
+                                  Control: ModernText@1.0.0
+                                  Properties:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =40
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =20
+                                    Text: ="Example Header"
+                              - con_Section1_1:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =250
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutGap: =24
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    LayoutWrap: =true
+                                    PaddingBottom: =16
+                                    PaddingLeft: =16
+                                    PaddingRight: =16
+                                    PaddingTop: =16
+                                    RadiusBottomLeft: =12
+                                    RadiusBottomRight: =12
+                                    RadiusTopLeft: =12
+                                    RadiusTopRight: =12
+                                    Width: =Parent.Width
+                              - con_Divider1_1:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Fill: =RGBA(240,240,240,1)
+                                    FillPortions: =0
+                                    Height: =1
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    PaddingBottom: =8
+                                    PaddingLeft: =8
+                                    PaddingRight: =8
+                                    PaddingTop: =8
+                                    X: =40
+                                    Y: =40
+                              - con_TwoColumns2_1:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    Height: =Max(300,con_ColRight_2.Y + con_ColRight_2.Height + Self.PaddingBottom)
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutGap: =24
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    LayoutWrap: =true
+                                    PaddingBottom: =1
+                                    PaddingLeft: =1
+                                    PaddingRight: =1
+                                    PaddingTop: =1
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - con_ColLeft_2:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Start
+                                          DropShadow: =DropShadow.None
+                                          Fill: =Color.White
+                                          Height: =300
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =200
+                                          RadiusBottomLeft: =12
+                                          RadiusBottomRight: =12
+                                          RadiusTopLeft: =12
+                                          RadiusTopRight: =12
+                                    - con_ColRight_2:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Start
+                                          DropShadow: =DropShadow.None
+                                          Fill: =Color.White
+                                          Height: =300
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =200
+                                          RadiusBottomLeft: =12
+                                          RadiusBottomRight: =12
+                                          RadiusTopLeft: =12
+                                          RadiusTopRight: =12
+                              - con_SubMainAutoHeight_5:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    Height: =1
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMaxHeight: =
+                                    LayoutMaxWidth: =
